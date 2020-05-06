@@ -7,7 +7,7 @@ ADD . /tari_base_node
 WORKDIR /tari_base_node
 
 RUN rustup component add rustfmt --toolchain nightly-2020-01-08-x86_64-unknown-linux-gnu
-RUN RUSTFLAGS="-C target-cpu=native" cargo build -p tari_base_node --release
+RUN cargo build -p tari_base_node --release
 
 # Create a base minimal image for adding our executables to
 FROM bitnami/minideb:stretch as base
